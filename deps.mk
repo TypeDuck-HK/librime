@@ -37,6 +37,7 @@ glog:
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
 	-DBUILD_TESTING:BOOL=OFF \
 	-DWITH_GFLAGS:BOOL=OFF \
+	-DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5" \
 	-DCMAKE_BUILD_TYPE:STRING="Release" \
 	-DCMAKE_INSTALL_PREFIX:PATH="$(prefix)" \
 	&& cmake --build $(build) --target install
@@ -45,6 +46,7 @@ googletest:
 	cd $(src_dir)/googletest; \
 	cmake . -B$(build) \
 	-DBUILD_GMOCK:BOOL=OFF \
+	-DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5" \
 	-DCMAKE_BUILD_TYPE:STRING="Release" \
 	-DCMAKE_INSTALL_PREFIX:PATH="$(prefix)" \
 	&& cmake --build $(build) --target install
@@ -54,6 +56,7 @@ leveldb:
 	cmake . -B$(build) \
 	-DLEVELDB_BUILD_BENCHMARKS:BOOL=OFF \
 	-DLEVELDB_BUILD_TESTS:BOOL=OFF \
+	-DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5" \
 	-DCMAKE_BUILD_TYPE:STRING="Release" \
 	-DCMAKE_INSTALL_PREFIX:PATH="$(prefix)" \
 	&& cmake --build $(build) --target install
@@ -61,6 +64,7 @@ leveldb:
 marisa-trie:
 	cd $(src_dir)/marisa-trie; \
 	cmake . -B$(build) \
+	-DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5" \
 	-DCMAKE_BUILD_TYPE:STRING="Release" \
 	-DCMAKE_INSTALL_PREFIX:PATH="$(prefix)" \
 	&& cmake --build $(build) --target install
@@ -69,6 +73,7 @@ opencc:
 	cd $(src_dir)/opencc; \
 	cmake . -B$(build) \
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
+	-DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5" \
 	-DCMAKE_BUILD_TYPE:STRING="Release" \
 	-DCMAKE_INSTALL_PREFIX:PATH="$(prefix)" \
 	&& cmake --build $(build) --target install
@@ -79,6 +84,7 @@ yaml-cpp:
 	-DYAML_CPP_BUILD_CONTRIB:BOOL=OFF \
 	-DYAML_CPP_BUILD_TESTS:BOOL=OFF \
 	-DYAML_CPP_BUILD_TOOLS:BOOL=OFF \
+	-DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5" \
 	-DCMAKE_BUILD_TYPE:STRING="Release" \
 	-DCMAKE_INSTALL_PREFIX:PATH="$(prefix)" \
 	&& cmake --build $(build) --target install

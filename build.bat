@@ -104,6 +104,7 @@ if defined PLATFORM_TOOLSET (
 set common_cmake_flags=%common_cmake_flags%^
   -DCMAKE_CONFIGURATION_TYPES:STRING="%build_config%"^
   -DCMAKE_BUILD_TYPE:STRING="%build_config%"^
+  -DCMAKE_POLICY_VERSION_MINIMUM:STRING="3.5"^
   -DCMAKE_USER_MAKE_RULES_OVERRIDE:PATH="%RIME_ROOT%\cmake\c_flag_overrides.cmake"^
   -DCMAKE_USER_MAKE_RULES_OVERRIDE_CXX:PATH="%RIME_ROOT%\cmake\cxx_flag_overrides.cmake"^
   -DCMAKE_EXE_LINKER_FLAGS_INIT:STRING="-llibcmt"^

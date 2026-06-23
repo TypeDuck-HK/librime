@@ -7,10 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runs-on: [macos-13, macos-14]
         include:
-          - runs-on: macos-13
-            create-distributable: false
           - runs-on: macos-14
             create-distributable: ${{ github.event_name != 'pull_request' }}
             build_variant: universal
