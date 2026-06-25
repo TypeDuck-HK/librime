@@ -167,3 +167,7 @@ else()
     ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
   install(TARGETS rime-static DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
 endif()
+if(DEFINED RIME_SETUP_EXTRA_MODULES)
+  target_compile_definitions(${rime_library} PRIVATE
+    "RIME_EXTRA_MODULES=${RIME_SETUP_EXTRA_MODULES}")
+endif()
